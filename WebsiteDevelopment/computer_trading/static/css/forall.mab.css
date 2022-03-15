@@ -1,0 +1,133 @@
+        main {
+            margin: 100px 0;
+        }
+        
+        .foot,
+        nav,
+        footer {
+            background-color: #17F6F6 !important;
+        }
+        
+        .nav-link {
+            color: black !important;
+            border: 1px solid rgb(86, 182, 211);
+        }
+        
+        .nav-link:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-decoration-color: rgb(104, 133, 133);
+            text-decoration-skip-ink: none;
+            border-radius: 10px;
+            border: 2px solid rgb(111, 193, 218);
+        }
+        
+        .nav-item {
+            margin-right: 10px;
+        }
+        
+        .dropdown-menu {
+            background-color: #d9f1f1;
+        }
+        /* .card-columns {
+    @include media-breakpoint-only(lg) {
+        column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+        column-count: 5;
+    }
+} */
+        
+        .card {
+            border: none;
+            margin-bottom: 30px;
+        }
+        
+        .card-body {
+            background-color: #a7f5f5b6;
+        }
+        
+        td {
+            padding-right: 10px;
+        }
+        
+        .containers {
+            width: 50%;
+            height: 40px;
+        }
+        
+        .add {
+            width: 25%;
+        }
+        
+        .da:hover,
+        .cfooter:hover,
+        .add:hover {
+            background-color: #17F6F6;
+        }
+        
+        .pdetail {
+            width: 30%;
+        }
+        
+        .delete,
+        .addh2,
+        .dh25,
+        .abh {
+            width: 70%;
+            background-color: #4fbaeba1;
+            border-radius: 10px;
+            height: 50px;
+        }
+        
+        .dtable {
+            background-color: #a7f5f5b6;
+        }
+        
+        .format {
+            width: 60%;
+        }
+        
+        .format input[type="submit"] {
+            display: block;
+            margin: 20px 20px 20px auto;
+        }
+        
+        .deletep {
+            color: rgba(95, 6, 6, 0.671);
+        }
+        
+        .home {
+            /* background-color: aliceblue; */
+            background-image: url(../images/back1.jpg);
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .homeh {
+            color: #f335fa;
+        }
+        
+        .homec {
+            margin: auto;
+            padding: 12%;
+        }
+        
+        .homec h1 {
+            color: #f546d8
+        }
+        
+        .tt {
+            width: 80%;
+            padding: 10px;
+            margin-left: 100px;
+        }
+        
+        .dd {
+            margin-left: 150px;
+            padding-left: 100px;
+            margin-bottom: 30px;
+            width: 50%;
+            align-items: center;
+        }

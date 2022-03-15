@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{%block title %} Computer detail{% endblock title %}
+{%block content %}
+<center class=""><img src="{{computer.photo.url}}" class="img-responsive mb-5 pdetail" height="300" alt=""><center>
+<div class="row">
+    <div class="col-md-5 mb-4">
+<div class=" dh25  container">
+        <h2 class="specification mb-4 ">specifications</h2></div>
+        <table class=" table-striped dtable shadow-lg mt-4 text-center">
+            <tr>
+                <td><label for="models">MODEL:</label></td>
+                <td><span id="models">{{computer.model}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="statuss">STATUS:</label></td>
+                <td><span id="statuss">{{computer.status}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="cores">CORE:</label></td>
+                <td><span id="cores">{{computer.core}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="ram">RAM:</label></td>
+                <td><span id="rams">{{computer.ram}}</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="HD ">HARD DISK:</label></td>
+                <td><span id="HD ">{{computer.hard_disk}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="battery ">Battery Life:</label></td>
+                <td><span id="battery ">{{computer.battery_life}}</span>
+                </td>
+            </tr>
+   <tr><td><label for="price ">PRICE:</label></td>
+                <td><span id="price ">{{computer.price}} Birr</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-7 mb-4">
+        <div class="dh25  mb-3 "><h2>Additional Description</h2></div>
+    <div class="border p-2  text-center shadow-lg">
+        <p>{{computer.description}}</p></div>
+        <div class=" dh25  mt-4 mb-3">
+            <h2>Contact</h2></div>
+            <div class="border p-2 text-center shadow-lg"> <div><label for="phone1">Phone: </label>
+            <span id="phone">{{computer.phone}}</span> </div>
+        <div>{%if computer.phone2  %} <label for="phone">Additional: </label><span>{{computer.phone2}}</span>
+        </div>{%endif%}</div>
+
+    </div>
+</div>
+<div><center>
+    <ul class="list-group list-group-horizontal justify-content-center mt-4 ">
+        <li class="list-group-item bg-info dl"><a href="{% url 'computer_edit' computer.id %}" class="btn da">Edit</a>
+        </li>
+        <li class=" list-group-item bg-info ms-4 dl">
+            <a href="{% url 'computer_delete' computer.id %}" class="btn da">Delete </a>
+        </li>
+    </ul></center>
+</div>
+{% endblock content %}

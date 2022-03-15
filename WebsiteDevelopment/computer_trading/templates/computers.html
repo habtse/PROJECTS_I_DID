@@ -1,0 +1,53 @@
+ {% extends 'base.html' %}
+ {% block title %} Computers {% endblock title %}
+{% block content %}
+<center><a href="{% url 'computer_add'%}" class="btn shadow border btn-info mb-4 add ">add new computer</a>
+</center>
+<div class="row">
+
+{% comment %} <div class="card-columns"> {% endcomment %}
+
+{% for computer in all_computers %}
+<span class="card col-lg-3  col-md-4 col-sm-6">
+  <div class="card-header">
+      <img src="{{computer.photo.url}}" alt="card pic" class="card-img-top"  height="250">
+  </div>
+  <div class="card-body">
+    <h3 class="card-title text-decoration-underline"> SPECIFICATIONS</h3>
+      <table class=" table-striped table-striped-black ">
+          <tr>
+              <td><label for="model">MODEL:</label></td>
+              <td><span id="model">{{computer.model}}</span></td>
+          </tr>
+          <tr>
+              <td><label for="status">STATUS:</label></td>
+              <td><span id="status">{{computer.status}}</span></td>
+          </tr>
+          <tr>
+              <td><label for="core">CORE:</label></td>
+              <td><span id="core">{{computer.core}}</span></td>
+          </tr>
+          <tr>
+              <td><label for="ram">RAM:</label></td>
+              <td><span id="ram">{{computer.ram}}</span></td>
+          </tr>
+          <tr>
+              <td><label" for="HD">HARD DISK:</label></td>
+              <td><span id="HD">{{computer.hard_disk}}</span></td>
+          </tr>
+          <tr>
+              <td><label for="price">PRICE:</label></td>
+              <td><span id="price">{{computer.price}} Birr</span>
+              </td>
+          </tr>
+      </table>
+
+  </div>
+  <div class="card-footer text-right ">
+      <a href="{% url 'computer_detail' computer.pk %}" class="btn btn-info cfooter">Details</a>
+  </div>
+</span>
+{% endfor %}
+{% comment %} </div> {% endcomment %}
+</div>
+ {% endblock content %}

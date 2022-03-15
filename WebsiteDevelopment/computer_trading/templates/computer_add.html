@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block title%} Add New Computer {% endblock title%}
+ {% block content %}
+ 
+<div class="addh2 text-center m-auto shadow" >
+    <h2 class="m-4"> Please fill this form.
+    </h2>
+</div>
+<div class="container mt-4 shadow-lg format">
+
+    <form method="post" action="" enctype="multipart/form-data"> 
+        {% csrf_token %} 
+        {{ form.as_p }}
+        
+        <input type="submit" name="" value="add" class="btn btn-info add">
+    </form>
+</div>
+{%endblock content%}
