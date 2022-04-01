@@ -1,0 +1,96 @@
+'''simple RSA encryption that encrypt number and decrypt that number
+ it is possible to encrypt any text using iteration but as your instruction we did only for numbers'''
+
+import math
+print ('please,enter two prime numbers')
+prime1= int(input('enter the first prime number: '))
+prime2=int(input('enter the second prime number: '))
+def is_prime(n):
+    if n==2:
+        return True
+    if n%2==0 or n<=1:
+        return False
+    sqr= int(math.sqrt(n)+1)
+    for divisor in range (3,sqr,2):
+        if n%divisor==0:
+            return False
+    return True
+while not (is_prime(prime1) and is_prime(prime2)):
+    print('you enter wrong number , please rty again ')
+    prime1 = int(input('enter the first prime number: '))
+    prime2 = int(input('enter the second prime number: '))
+
+
+product = prime1*prime2
+fi= (prime1-1)*(prime2-1)
+list_all=[]
+for i in range (2,product):
+    list_all.append(i)
+
+
+
+
+def factors(number):
+    list1=[]
+    for i in range (2,number):
+        if number%i==0:
+            list1.append(i)
+    return (list1)
+
+def coprime_remover(list):
+    for i in list:
+        for j in range (1,product//2):
+            if i*j in list_all:
+                list_all.remove (i*j)
+
+def remove_bigger(list):
+    for i in list:
+        if i in list_all:
+            list_all.remove(i)
+
+def decryption(en):
+    i= 1
+    while i>0:
+        formula=(1+fi*i)%en
+        dec=int (1+fi*i)//en
+        if formula ==0:
+            return (dec)
+        i+=i
+
+def encrypt(value):
+    cypher=(value**encryption_key)%product
+    return (cypher)
+
+def decrypt(value):
+    decrypted=(value**decryption_key)%product
+    return (decrypted)
+
+
+list_product=factors(product)
+list_fi=factors(fi)
+
+
+coprime_remover(list_product)
+coprime_remover(list_fi)
+
+list_bigger=[]
+for i in list_all:
+    if i>fi:
+        list_bigger.append(i)
+remove_bigger(list_bigger)
+
+
+print('the possile encription key is:',list_all)
+
+selected_index=int (input('please enter the index of the encryption key you want '))
+
+encryption_key=list_all[selected_index]
+decryption_key=decryption(encryption_key)
+print ('selected public key is','(',encryption_key,',',product,')')
+print  ('private key is','(',decryption_key,',',product,')')
+
+value =int( input('enter text to encrypt:  '))
+encrypted_message = encrypt(value)
+print ('the encryption message is:',encrypted_message)
+decrypted=decrypt(encrypted_message)
+print ("the decription message  is: ",decrypted)
